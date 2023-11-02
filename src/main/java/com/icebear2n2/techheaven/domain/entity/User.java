@@ -67,7 +67,6 @@ public class User implements UserDetails {
     @Schema(description = "계정 삭제 시간")
     private Timestamp deletedAt;
 
-
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         List<GrantedAuthority> authorities = new ArrayList<>();
