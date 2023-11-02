@@ -38,6 +38,9 @@ public class Product {
     @JsonManagedReference
     private List<ProductDetail> productDetails;
 
+    @OneToMany(mappedBy = "product")
+    private List<CartItem> cartItems;
+
     public void setCategory(Category category) {
         this.category = category;
     }
