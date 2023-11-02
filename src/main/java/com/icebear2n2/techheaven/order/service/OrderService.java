@@ -68,6 +68,10 @@ public class OrderService {
     }
 
 
+    //     TODO: [배송 서비스 로직에서 같이 사용 !!]
+    //     TODO: 1. 배송에서 배송 생성 메소드 사용 시 -> 주문 상태: SHIPPED
+    //     TODO: 2. 배송에서 배송 완료 메소드 사용 시 -> 주문 상태: DELIVERED
+
     public OrderResponse changeOrderStatus(UpdateOrderStatusRequest updateOrderStatusRequest) {
         Order order = orderRepository.findById(updateOrderStatusRequest.getOrderId())
                 .orElseThrow(() -> new TechHeavenException(ErrorCode.ORDER_NOT_FOUND));
