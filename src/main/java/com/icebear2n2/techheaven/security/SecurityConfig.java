@@ -39,12 +39,12 @@ public class SecurityConfig {
 
                 .authorizeHttpRequests(r ->
                         r.requestMatchers(
-                                        AntPathRequestMatcher.antMatcher("/users/login")
-                                        , AntPathRequestMatcher.antMatcher("/users/signup")
-                                        , AntPathRequestMatcher.antMatcher("/token")
-                                        , AntPathRequestMatcher.antMatcher("/verification")
+                                        AntPathRequestMatcher.antMatcher("/auth/users/login")
+                                        , AntPathRequestMatcher.antMatcher("/auth/users/signup")
+                                        , AntPathRequestMatcher.antMatcher("/auth/token")
+                                        , AntPathRequestMatcher.antMatcher("/auth/verification")
                                 ).permitAll()
-                                .requestMatchers(AntPathRequestMatcher.antMatcher("/users/delete")
+                                .requestMatchers(AntPathRequestMatcher.antMatcher("/auth/users/delete")
 //                                        , AntPathRequestMatcher.antMatcher("/verification/balance")
                                 )
                                 .hasAnyRole("ADMIN")
@@ -54,7 +54,7 @@ public class SecurityConfig {
                 .oauth2Login(oauth ->
                         oauth.userInfoEndpoint((u) -> u.userService(new OAuth2UserService(userRepository)))
                                 .loginPage("http://localhost:8080/api/v1/auth/oauth2/authorization/kakao")
-                                .defaultSuccessUrl("/token/oauth")
+                                .defaultSuccessUrl("/auth/token/oauth")
                 )
                 .addFilter(new JwtAuthorizationFilter(authenticationManager, userRepository))
                 .build();

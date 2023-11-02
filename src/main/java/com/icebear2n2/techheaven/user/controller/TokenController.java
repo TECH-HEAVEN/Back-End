@@ -22,7 +22,7 @@ import java.util.Map;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/token")
+@RequestMapping("/auth/token")
 @Tag(name = "TokenController", description = "JWT 토큰 관련 기능 처리")
 public class TokenController {
     private final TokenService tokenService;

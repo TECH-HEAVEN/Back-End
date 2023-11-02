@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/verification")
+@RequestMapping("/auth/verification")
 public class AuthCodeController {
 
     private final AuthCodeService authCodeService;

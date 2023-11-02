@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/password/recovery")
+@RequestMapping("/auth/password/recovery")
 public class PasswordRecoveryController {
 
     private final PasswordRecoveryService passwordRecoveryService;

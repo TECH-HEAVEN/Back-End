@@ -22,7 +22,7 @@ import java.util.Map;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/users")
+@RequestMapping("/auth/users")
 public class UserController {
 
     //UserController: 사용자 정보 조회 기능 처리.
